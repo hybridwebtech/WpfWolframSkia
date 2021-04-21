@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfWolframSkia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfWolframSkia"
+        xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
+        mc:Ignorable="d" Loaded="MainWindow_OnLoaded"
+        Title="MainWindow" Height="500" Width="500">
+    <Grid>
+        <skia:SKElement Name="Canvas" PaintSurface="OnPaintSurface" />
+    </Grid>
+</Window>
+
