@@ -93,6 +93,10 @@
         <Reference Include="Wolfram.NETLink, Version=1.7.7640.3758, Culture=neutral, PublicKeyToken=null">
           <HintPath>C:\Program Files\Wolfram Research\Mathematica\12.2\SystemFiles\Links\NETLink\Wolfram.NETLink.dll</HintPath>
         </Reference>
+        <Reference Include="Z.Expressions.Eval, Version=4.0.40.0, Culture=neutral, PublicKeyToken=59b66d028979105b">
+          <HintPath>..\packages\Z.Expressions.Eval.4.0.40\lib\net45\Z.Expressions.Eval.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <ApplicationDefinition Include="App.xaml">
