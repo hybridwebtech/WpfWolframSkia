@@ -45,11 +45,6 @@ namespace WpfWolframSkia
             // };
             //
             // wrapper.Canvas.DrawBitmap(_bmp, new SKPoint(0.0f, 0.0f), paint);
-
-            //RandomLinesPainter.Instance.OnPaint(sender, this, e);
-            //XamagonPainter.Instance.OnPaint(wrapper);
-            //PaintCircle.Instance.OnPaint(wrapper);
-            //PaintTextInfo.Instance.OnPaint(sender, this, e);
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
