@@ -104,6 +104,9 @@
             <SubType>Designer</SubType>
         </ApplicationDefinition>
         <Compile Include="Epicycloid.cs" />
+        <Compile Include="FileUtil.cs" />
+        <Compile Include="HSLColor.cs" />
+        <Compile Include="ImageC.cs" />
         <Compile Include="PaintCircle.cs" />
         <Compile Include="SkiaPaintWrapper.cs" />
         <Compile Include="WolframService.cs" />

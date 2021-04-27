@@ -31,20 +31,20 @@ namespace WpfWolframSkia
             
             wrapper.Canvas.Clear();
 
-            var epicycloid = new Epicycloid();
+            //var epicycloid = new Epicycloid();
             
-            epicycloid.Draw(wrapper, 9.0, 4.0);
+            //epicycloid.Draw(wrapper, 9.0, 4.0);
 
-            // var paint = new SKPaint
-            // {
-            //     Color = SKColors.Black,
-            //     IsAntialias = true,
-            //     Style = SKPaintStyle.Fill,
-            //     TextAlign = SKTextAlign.Center,
-            //     TextSize = 24
-            // };
-            //
-            // wrapper.Canvas.DrawBitmap(_bmp, new SKPoint(0.0f, 0.0f), paint);
+            var paint = new SKPaint
+            {
+                Color = SKColors.Black,
+                IsAntialias = true,
+                Style = SKPaintStyle.Fill,
+                TextAlign = SKTextAlign.Center,
+                TextSize = 24
+            };
+            
+            wrapper.Canvas.DrawBitmap(_bmp, new SKPoint(0.0f, 0.0f), paint);
         }
 
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
