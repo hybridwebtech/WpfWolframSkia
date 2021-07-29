@@ -18,11 +18,17 @@ namespace WpfWolframSkia
             };
 
             double[] xs = Generate.LinearRange(0.0, Math.PI/200, 2*Math.PI);
+
+            double midX = wrapper.Canvas.LocalClipBounds.MidX;
+            double midY = wrapper.Canvas.LocalClipBounds.MidY;
+
+            double sizeX = 0.8 * midX;
+            double sizeY = 0.8 * midY;
             
-            double[] cosxps = Generate.Map(xs, x => 300 * Math.Cos(p * x) + 350);
-            double[] sinxps = Generate.Map(xs, x => 300 * Math.Sin(p * x) + 350);
-            double[] cosxqs = Generate.Map(xs, x => 300 * Math.Cos(q * x) + 350);
-            double[] sinxqs = Generate.Map(xs, x => 300 * Math.Sin(q * x) + 350);
+            double[] cosxps = Generate.Map(xs, x => sizeX * Math.Cos(p * x) + midX);
+            double[] sinxps = Generate.Map(xs, x => sizeY * Math.Sin(p * x) + midY);
+            double[] cosxqs = Generate.Map(xs, x => sizeX * Math.Cos(q * x) + midX);
+            double[] sinxqs = Generate.Map(xs, x => sizeY * Math.Sin(q * x) + midY);
 
             for (int i = 0; i < xs.Length; i++)
             {
@@ -30,19 +36,6 @@ namespace WpfWolframSkia
                     (float)cosxqs[i], (float)sinxqs[i],
                     paint);
             }
-            
-            // foreach (double x in xs)
-            // {
-            //     double xp = p * x;
-            //     double xq = q * x;
-            //
-            //     double x0 = 300*Math.Cos(xp) + 350;
-            //     double y0 = 300*Math.Sin(xp) + 350;
-            //     double x1 = 300*Math.Cos(xq) + 350;
-            //     double y1 = 300*Math.Sin(xq) + 350;
-            //     
-            //     wrapper.Canvas.DrawLine((float)x0, (float)y0, (float)x1, (float)y1, paint);
-            // }
         }
     }
 }
