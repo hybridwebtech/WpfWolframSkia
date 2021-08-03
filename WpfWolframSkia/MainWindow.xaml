@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfWolframSkia"
         xmlns:skia="clr-namespace:SkiaSharp.Views.WPF;assembly=SkiaSharp.Views.WPF"
-        mc:Ignorable="d" Loaded="MainWindow_OnLoaded" SizeChanged="MainWindow_OnSizeChanged"
+        SizeChanged="MainWindow_OnSizeChanged"
         Title="MainWindow" Height="500" Width="500">
     <Grid>
         <skia:SKElement Name="Canvas" PaintSurface="OnPaintSurface" />

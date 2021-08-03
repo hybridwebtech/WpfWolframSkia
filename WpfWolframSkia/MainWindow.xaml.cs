@@ -14,9 +14,6 @@ namespace WpfWolframSkia
     /// </summary>
     public partial class MainWindow
     {
-        private SKBitmap _bmp;
-        private bool[,] _skinMask;
-        
         public MainWindow()
         {
             InitializeComponent();
@@ -28,15 +25,16 @@ namespace WpfWolframSkia
             
             wrapper.Canvas.Clear();
 
-            var epicycloid = new Epicycloid();
-            
-            epicycloid.Draw(wrapper, 9.0, 4.0);
+            //var epicycloid = new Epicycloid();
+            //epicycloid.Draw(wrapper, 9.0, 4.0);
+
+            // var draw3D = new Draw3D();
+            // draw3D.Draw(wrapper);
+
+            var spiro = new Spirograph();
+            spiro.Draw(wrapper);
         }
 
-        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
-        {
-        }
-        
         private void MainWindow_OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             Canvas.InvalidateVisual();
