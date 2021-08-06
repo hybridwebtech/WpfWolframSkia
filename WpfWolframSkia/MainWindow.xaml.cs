@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using SkiaSharp;
@@ -31,8 +32,17 @@ namespace WpfWolframSkia
             // var draw3D = new Draw3D();
             // draw3D.Draw(wrapper);
 
-            var spiro = new Spirograph();
-            spiro.Draw(wrapper);
+            // var spiro = new Spirograph();
+            // spiro.Draw(wrapper);
+            
+            IDrawable cardio = new Cardioid();
+            cardio.Draw(wrapper, new Dictionary<string, object>()
+            {
+                {"a", 0.25},
+                {"n", 100},
+                {"scaleX", 1.0},
+                {"scaleY", 1.0},
+            });
         }
 
         private void MainWindow_OnSizeChanged(object sender, SizeChangedEventArgs e)

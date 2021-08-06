@@ -103,10 +103,13 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Cardioid.cs" />
+        <Compile Include="DictUtils.cs" />
         <Compile Include="Draw3D.cs" />
         <Compile Include="Epicycloid.cs" />
         <Compile Include="FileUtil.cs" />
         <Compile Include="HSLColor.cs" />
+        <Compile Include="IDrawable.cs" />
         <Compile Include="ImageC.cs" />
         <Compile Include="PaintCircle.cs" />
         <Compile Include="SkiaPaintWrapper.cs" />
