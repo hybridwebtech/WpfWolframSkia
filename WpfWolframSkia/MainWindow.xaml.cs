@@ -40,8 +40,8 @@ namespace WpfWolframSkia
             {
                 {"a", 0.25},
                 {"n", 100},
-                {"scaleX", 1.0},
-                {"scaleY", 1.0},
+                {"scaleX", 0.9},
+                {"scaleY", 0.9},
             });
         }
 

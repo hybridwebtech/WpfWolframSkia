@@ -103,6 +103,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="BaseDrawable.cs" />
         <Compile Include="Cardioid.cs" />
         <Compile Include="DictUtils.cs" />
         <Compile Include="Draw3D.cs" />
