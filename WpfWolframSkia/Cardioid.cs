@@ -25,17 +25,6 @@ namespace WpfWolframSkia
             
             double[] T = Generate.LinearRange(0.0, Math.PI/n, 2*Math.PI);
             
-            double midX = wrapper.Canvas.LocalClipBounds.MidX;
-            double midY = wrapper.Canvas.LocalClipBounds.MidY;
-
-            double sizeX = wrapper.Canvas.LocalClipBounds.Width;
-            double sizeY = wrapper.Canvas.LocalClipBounds.Height;
-            
-            // double[] X = Generate.Map(T, t => scaleX*(midX +
-            //     midX * (2*a*(1.0 - Math.Cos(t))*Math.Cos(t))));
-            // double[] Y = Generate.Map(T, t => scaleY*(midY +
-            //     midY * (2*a*(1.0 - Math.Cos(t))*Math.Sin(t))));
-            
             double[] X = Generate.Map(T, t => 2*a*(1.0 - Math.Cos(t))*Math.Cos(t));
             double[] Y = Generate.Map(T, t => 2*a*(1.0 - Math.Cos(t))*Math.Sin(t));
             
@@ -43,8 +32,8 @@ namespace WpfWolframSkia
             
             for (int i = 0; i < X.Length - 1; i++)
             {
-                XYPoint p0 = WorldToView(X[i], Y[i]);
-                XYPoint p1 = WorldToView(X[i + 1], Y[i + 1]);
+                XYPoint<float> p0 = WorldToView(X[i], Y[i]);
+                XYPoint<float> p1 = WorldToView(X[i + 1], Y[i + 1]);
                 
                 wrapper.Canvas.DrawLine((float)p0.X, (float)p0.Y, (float)p1.X, (float)p1.Y, paint);
             }            

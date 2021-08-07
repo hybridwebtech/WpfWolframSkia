@@ -26,23 +26,29 @@ namespace WpfWolframSkia
             
             wrapper.Canvas.Clear();
 
-            //var epicycloid = new Epicycloid();
-            //epicycloid.Draw(wrapper, 9.0, 4.0);
-
+            IDrawable epicycloid = new Epicycloid();
+            epicycloid.Draw(wrapper, new Dictionary<string, object>()
+            {
+                {"p", 9.0},
+                {"q", 4.0},
+                {"scaleX", 0.9},
+                {"scaleY", 0.9},
+            });
+            
             // var draw3D = new Draw3D();
             // draw3D.Draw(wrapper);
 
             // var spiro = new Spirograph();
             // spiro.Draw(wrapper);
             
-            IDrawable cardio = new Cardioid();
-            cardio.Draw(wrapper, new Dictionary<string, object>()
-            {
-                {"a", 0.25},
-                {"n", 100},
-                {"scaleX", 0.9},
-                {"scaleY", 0.9},
-            });
+            // IDrawable cardio = new Cardioid();
+            // cardio.Draw(wrapper, new Dictionary<string, object>()
+            // {
+            //     {"a", 0.25},
+            //     {"n", 100},
+            //     {"scaleX", 0.9},
+            //     {"scaleY", 0.9},
+            // });
         }
 
         private void MainWindow_OnSizeChanged(object sender, SizeChangedEventArgs e)

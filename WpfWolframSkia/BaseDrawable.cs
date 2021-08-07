@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace WpfWolframSkia
 {
-    public class XYPoint
+    public class XYPoint<T>
     {
-        public double X { get; set; }
-        public double Y { get; set; }
+        public T X { get; set; }
+        public T Y { get; set; }
 
-        public XYPoint(double x, double y)
+        public XYPoint(T x, T y)
         {
             X = x;
             Y = y;
@@ -46,11 +46,30 @@ namespace WpfWolframSkia
             MaxWorldY = FindArrayMax(Y);
             MinWorldY = FindArrayMin(Y);
         }
+        
+        public void FindWorldExtents(double[] X1, double[] X2, double[] Y1, double[] Y2)
+        {
+            double temp1 = FindArrayMax(X1);
+            double temp2 = FindArrayMax(X2);
+            MaxWorldX = temp1 > temp2 ? temp1 : temp2;
+            
+            temp1 = FindArrayMin(X1);
+            temp2 = FindArrayMin(X2);
+            MinWorldX = temp1 < temp2 ? temp1 : temp2;
+            
+            temp1 = FindArrayMax(Y1);
+            temp2 = FindArrayMax(Y2);
+            MaxWorldY = temp1 > temp2 ? temp1 : temp2;
+            
+            temp1 = FindArrayMin(Y1);
+            temp2 = FindArrayMin(Y2);
+            MinWorldY = temp1 < temp2 ? temp1 : temp2;            
+        }        
 
-        public double WorldXToViewX(double wx) => ScaleX*SizeX * (wx - MinWorldX) / (MaxWorldX - MinWorldX);
-        public double WorldYToViewY(double wy) => ScaleY*SizeX * (wy - MinWorldY) / (MaxWorldY - MinWorldY);
+        public double WorldXToViewX(double wx) => (ScaleX*SizeX * (wx - MinWorldX) / (MaxWorldX - MinWorldX));
+        public double WorldYToViewY(double wy) => (ScaleY*SizeX * (wy - MinWorldY) / (MaxWorldY - MinWorldY));
 
-        public XYPoint WorldToView(double wx, double wy) => 
-            new XYPoint(WorldXToViewX(wx), WorldYToViewY(wy));
+        public XYPoint<float> WorldToView(double wx, double wy) => 
+            new XYPoint<float>((float)WorldXToViewX(wx), (float)WorldYToViewY(wy));
     }
 }
