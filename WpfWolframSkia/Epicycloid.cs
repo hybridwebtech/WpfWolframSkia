@@ -25,12 +25,6 @@ namespace WpfWolframSkia
 
             double[] xs = Generate.LinearRange(0.0, Math.PI/200, 2*Math.PI);
 
-            // double midX = wrapper.Canvas.LocalClipBounds.MidX;
-            // double midY = wrapper.Canvas.LocalClipBounds.MidY;
-            //
-            // double sizeX = 0.8 * midX;
-            // double sizeY = 0.8 * midY;
-            
             double[] cosxps = Generate.Map(xs, x => Math.Cos(p * x));
             double[] sinxps = Generate.Map(xs, x => Math.Sin(p * x));
             double[] cosxqs = Generate.Map(xs, x => Math.Cos(q * x));
@@ -44,10 +38,6 @@ namespace WpfWolframSkia
                 XYPoint<float> p1 = WorldToView(cosxqs[i], sinxqs[i]);
                 
                 wrapper.Canvas.DrawLine((float)p0.X, (float)p0.Y, (float)p1.X, (float)p1.Y, paint);
-                
-                // wrapper.Canvas.DrawLine((float)cosxps[i], (float)sinxps[i], 
-                //     (float)cosxqs[i], (float)sinxqs[i],
-                //     paint);
             }
         }
     }

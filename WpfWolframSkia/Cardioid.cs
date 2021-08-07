@@ -36,7 +36,7 @@ namespace WpfWolframSkia
                 XYPoint<float> p1 = WorldToView(X[i + 1], Y[i + 1]);
                 
                 wrapper.Canvas.DrawLine((float)p0.X, (float)p0.Y, (float)p1.X, (float)p1.Y, paint);
-            }            
+            }
         }
     }
 }

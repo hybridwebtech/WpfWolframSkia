@@ -18,8 +18,8 @@ namespace WpfWolframSkia
     
     public class BaseDrawable : IDrawable
     {
-        public double ScaleX { get; set; }
-        public double ScaleY { get; set; }
+        public double ScaleX { get; set; } = 1.0;
+        public double ScaleY { get; set; } = 1.0;
         public double SizeX { get; set; }
         public double SizeY { get; set; }
         public double MaxWorldX { get; set; }
