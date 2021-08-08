@@ -36,8 +36,8 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="MathNet.Numerics, Version=4.15.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\packages\MathNet.Numerics.4.15.0\lib\net461\MathNet.Numerics.dll</HintPath>
+        <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\MathNet.Numerics.5.0.0-alpha02\lib\net48\MathNet.Numerics.dll</HintPath>
           <Private>True</Private>
         </Reference>
         <Reference Include="MoreLinq, Version=3.3.2.0, Culture=neutral, PublicKeyToken=384d532d7e88985d">
@@ -93,8 +93,8 @@
         <Reference Include="Wolfram.NETLink, Version=1.7.7640.3758, Culture=neutral, PublicKeyToken=null">
           <HintPath>C:\Program Files\Wolfram Research\Mathematica\12.2\SystemFiles\Links\NETLink\Wolfram.NETLink.dll</HintPath>
         </Reference>
-        <Reference Include="Z.Expressions.Eval, Version=4.0.40.0, Culture=neutral, PublicKeyToken=59b66d028979105b">
-          <HintPath>..\packages\Z.Expressions.Eval.4.0.40\lib\net45\Z.Expressions.Eval.dll</HintPath>
+        <Reference Include="Z.Expressions.Eval, Version=4.0.49.0, Culture=neutral, PublicKeyToken=59b66d028979105b">
+          <HintPath>..\packages\Z.Expressions.Eval.4.0.49\lib\net45\Z.Expressions.Eval.dll</HintPath>
           <Private>True</Private>
         </Reference>
     </ItemGroup>
@@ -103,6 +103,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Astroid.cs" />
         <Compile Include="BaseDrawable.cs" />
         <Compile Include="Cardioid.cs" />
         <Compile Include="DictUtils.cs" />

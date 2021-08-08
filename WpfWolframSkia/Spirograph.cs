@@ -30,7 +30,7 @@ namespace WpfWolframSkia
             
             double t = 0;
             double dt = Math.PI / iter;
-            double max_t = 2 * Math.PI * B / GCD((long)A, (long)B);
+            double maxt = 2 * Math.PI * B / GCD((long)A, (long)B);
             double xl = X(t, A, B, C);
             double yl = Y(t, A, B, C);
 
@@ -40,7 +40,7 @@ namespace WpfWolframSkia
             XList.Add(xl);
             YList.Add(yl);
             
-            while (t <= max_t)
+            while (t <= maxt)
             {
                 t += dt;
                 double x1 = X(t, A, B, C);

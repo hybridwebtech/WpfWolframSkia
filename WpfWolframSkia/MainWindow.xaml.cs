@@ -38,18 +38,16 @@ namespace WpfWolframSkia
             // var draw3D = new Draw3D();
             // draw3D.Draw(wrapper);
 
-            // var spiro = new Spirograph();
-            // spiro.Draw(wrapper);
-            IDrawable spiro = new Spirograph();
-            spiro.Draw(wrapper, new Dictionary<string, object>()
-            {
-                {"iter", 100.0},
-                {"A", 80.0},
-                {"B", 14.0},
-                {"C", 30.0},
-                {"scaleX", 0.9},
-                {"scaleY", 0.9},                
-            });
+            // IDrawable spiro = new Spirograph();
+            // spiro.Draw(wrapper, new Dictionary<string, object>()
+            // {
+            //     {"iter", 100.0},
+            //     {"A", 80.0},
+            //     {"B", 14.0},
+            //     {"C", 30.0},
+            //     {"scaleX", 0.9},
+            //     {"scaleY", 0.9},                
+            // });
 
             // IDrawable cardio = new Cardioid();
             // cardio.Draw(wrapper, new Dictionary<string, object>()
@@ -59,6 +57,15 @@ namespace WpfWolframSkia
             //     {"scaleX", 0.9},
             //     {"scaleY", 0.9},
             // });
+            
+            IDrawable astroid = new Astroid();
+            astroid.Draw(wrapper, new Dictionary<string, object>()
+            {
+                {"a", 1.0},
+                {"n", 100},
+                {"scaleX", 0.9},
+                {"scaleY", 0.9},
+            });
         }
 
         private void MainWindow_OnSizeChanged(object sender, SizeChangedEventArgs e)
