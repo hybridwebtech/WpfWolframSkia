@@ -85,5 +85,11 @@ namespace WpfWolframSkia
                     paint);
             }
         }
+
+        public void DrawPolyline(SKPaintWrapper wrapper, List<double> X, List<double> Y,
+            SKPaint paint)
+        {
+            DrawPolyline(wrapper, X.ToArray(), Y.ToArray(), paint);
+        }
     }
 }

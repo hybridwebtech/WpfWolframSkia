@@ -11,7 +11,7 @@ namespace WpfWolframSkia
         {
             base.Draw(wrapper, drawParams);
             
-            var paint = new SKPaint
+            var paint = new SKPaint()
             {
                 Color = SKColors.Blue,
                 IsAntialias = true,
@@ -30,13 +30,7 @@ namespace WpfWolframSkia
             
             FindWorldExtents(X, Y);
             
-            for (int i = 0; i < X.Length - 1; i++)
-            {
-                XYPoint<float> p0 = WorldToView(X[i], Y[i]);
-                XYPoint<float> p1 = WorldToView(X[i + 1], Y[i + 1]);
-                
-                wrapper.Canvas.DrawLine((float)p0.X, (float)p0.Y, (float)p1.X, (float)p1.Y, paint);
-            }
+            DrawPolyline(wrapper, X, Y, paint);
         }
     }
 }
