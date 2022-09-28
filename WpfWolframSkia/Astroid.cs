@@ -5,13 +5,13 @@ using MathNet.Numerics;
 
 namespace WpfWolframSkia
 {
-    public class Cardioid : BaseDrawable
+    public class Astroid : BaseDrawable
     {
         public override void Draw(SKPaintWrapper wrapper, Dictionary<string, object> drawParams)
         {
             base.Draw(wrapper, drawParams);
             
-            var paint = new SKPaint()
+            var paint = new SKPaint
             {
                 Color = SKColors.Blue,
                 IsAntialias = true,
@@ -25,8 +25,8 @@ namespace WpfWolframSkia
             
             double[] T = Generate.LinearRange(0.0, Math.PI/n, 2*Math.PI);
             
-            double[] X = Generate.Map(T, t => 2*a*(1.0 - Math.Cos(t))*Math.Cos(t));
-            double[] Y = Generate.Map(T, t => 2*a*(1.0 - Math.Cos(t))*Math.Sin(t));
+            double[] X = Generate.Map(T, t => (a/4)*(3*Math.Cos(t) + Math.Cos(3*t)));
+            double[] Y = Generate.Map(T, t => (a/4)*(3*Math.Sin(t) - Math.Sin(3*t)));
             
             FindWorldExtents(X, Y);
             

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SkiaSharp;
 
 namespace WpfWolframSkia
 {
@@ -71,5 +72,24 @@ namespace WpfWolframSkia
 
         public XYPoint<float> WorldToView(double wx, double wy) => 
             new XYPoint<float>((float)WorldXToViewX(wx), (float)WorldYToViewY(wy));
+        
+        public void DrawPolyline(SKPaintWrapper wrapper, double[] X, double[] Y, SKPaint paint)
+        {
+            for (int i = 0; i < X.Length - 1; i++)
+            {
+                XYPoint<float> p0 = WorldToView(X[i], Y[i]);
+                XYPoint<float> p1 = WorldToView(X[i + 1], Y[i + 1]);
+
+                wrapper.Canvas.DrawLine((float) p0.X, (float) p0.Y, (float)
+                    p1.X, (float) p1.Y,
+                    paint);
+            }
+        }
+
+        public void DrawPolyline(SKPaintWrapper wrapper, List<double> X, List<double> Y,
+            SKPaint paint)
+        {
+            DrawPolyline(wrapper, X.ToArray(), Y.ToArray(), paint);
+        }
     }
 }
