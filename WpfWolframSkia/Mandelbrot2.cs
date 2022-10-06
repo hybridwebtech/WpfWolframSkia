@@ -10,6 +10,10 @@ namespace WpfWolfram
 {
     public class Mandelbrot2 : BaseDrawable
     {
+        //
+        // https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set
+        //
+
         private bool _initialized = false;
 
         private SKColor[] _palette = new SKColor[256];
