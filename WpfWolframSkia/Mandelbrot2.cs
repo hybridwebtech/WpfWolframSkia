@@ -14,6 +14,11 @@ namespace WpfWolfram
         // https://en.wikipedia.org/wiki/Plotting_algorithms_for_the_Mandelbrot_set
         //
 
+        //
+        // also, for some initial palettes:
+        // https://slicker.me/fractals/color.htm
+        //
+
         private bool _initialized = false;
 
         private SKColor[] _palette = new SKColor[256];
