@@ -111,6 +111,8 @@
     <Compile Include="HSLColor.cs" />
     <Compile Include="IDrawable.cs" />
     <Compile Include="ImageC.cs" />
+    <Compile Include="Mandelbrot.cs" />
+    <Compile Include="Mandelbrot2.cs" />
     <Compile Include="PaintCircle.cs" />
     <Compile Include="SkiaPaintWrapper.cs" />
     <Compile Include="Spirograph.cs" />
@@ -157,6 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="skin_mask.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jetColorMap.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
